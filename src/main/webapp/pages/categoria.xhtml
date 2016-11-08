@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:h="http://java.sun.com/jsf/html" xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+</h:head>
+<h:body>
+    <h:form>
+    
+     <h:panelGrid columns="2" style="margin-bottom:10px" cellpadding="5">
+        <p:outputLabel for="console" value="Desdcrição:" />
+        <p:selectOneMenu id="console" value="#{categoriaMB.categoria.descricaiCategoria}" style="width:125px">
+            <f:selectItem itemLabel="Select One" itemValue="" />
+            <f:selectItem itemLabel="picape" itemValue="picape" />
+            <f:selectItem itemLabel="particular" itemValue="particular" />
+            <f:selectItem itemLabel="passeio" itemValue="passeio" />
+            <f:selectItem itemLabel="caminhonet" itemValue="caminhonet" />
+        </p:selectOneMenu>
+         </h:panelGrid>
+    <p:commandButton value="incluir" action="#{categoriaMB.salvar()}"></p:commandButton>
+    
+ 
+    </h:form>
+</h:body>
+</html>

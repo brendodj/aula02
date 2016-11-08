@@ -8,7 +8,25 @@
 </h:head>
 <h:body>
     <h:form>
-         <p:commandButton value="Chamar Bean" action="#{denunciaMB.chamar()}"></p:commandButton>
+    <p:menubar>
+        <p:submenu label="Veiculo" icon="ui-icon-document">
+            
+            <p:menuitem value="Modelo" url="" />
+            <p:separator />
+            <p:menuitem value="Categoria" url="/pages/categoria.xhtml" />
+        </p:submenu>
+     </p:menubar>
+     
+    <p:inputText value="#{agenteMB.agente.nome}" >Nome:</p:inputText><br/><br/>
+    
+    <p:outputLabel for="popup" value="Data Contratação::" />
+        <p:calendar id="popup" value="#{agenteMB.agente.dtContratacao}"/>
+    <br/><br/>
+    
+    <p:inputText value="#{agenteMB.agente.tempoServico}" >Tempo de Serviço:</p:inputText><br/><br/>
+    <p:commandButton value="incluir" action="#{agenteMB.salvar()}"></p:commandButton>
+    
+ 
     </h:form>
 </h:body>
 </html>

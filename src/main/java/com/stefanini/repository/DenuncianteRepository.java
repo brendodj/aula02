@@ -5,31 +5,26 @@ import java.util.List;
 import javax.inject.Inject;
 import javax.persistence.EntityManager;
 
-import com.stefanini.model.Denuncia;
+import com.stefanini.model.Denunciante;
 
-public class DenunciaRepository {
-
+public class DenuncianteRepository {
 	@Inject
 	private EntityManager manager;
 
-	public void incluir(Denuncia denuncia) {
-		this.manager.persist(denuncia);
+	public void incluir(Denunciante denunciante) {
+		this.manager.persist(denunciante);
 	}
 
-	public void altera(Denuncia denuncia) {
-		this.manager.merge(denuncia);
+	public void altera(Denunciante denunciante) {
+		this.manager.merge(denunciante);
 	}
 
-	public Denuncia busca(Integer id) {
-		return this.manager.find(Denuncia.class, id);
+	public Denunciante busca(Integer id) {
+		return this.manager.find(Denunciante.class, id);
 	}
 
-	public List<Denuncia> lista() {
-		return this.manager.createQuery("select c from denuncia c", Denuncia.class)
+	public List<Denunciante> lista() {
+		return this.manager.createQuery("select c from denuncia c", Denunciante.class)
 				.getResultList();
 	}
 }
-
-
-
-
